@@ -1,0 +1,37 @@
+<header class="container">
+    <div class="logo">
+        <a href="">E <span>*</span> Burger</a>
+    </div>
+    <nav>
+        <ul class="leftside">
+            <li><a href="">Início</a></li>
+            <li><a href="">Burgers</a></li>
+            <li><a href="">Contato</a></li>
+
+        </ul>
+        <div class="rightside">
+            <a href="" class="button">Fazer pedido</a>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="menu--icon">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container" *ngFor="let item of list_txt">
+        <div class="leftside">
+            <h1>{{ item.title_1 }}</h1>
+            <p>{{ item.txt_1 }}</p>
+            <a href="" class="button">Fazer pedido</a>
+        </div>
+        <div class="rightside">
+            <img src="assets/heroBurger.png" alt="">
+        </div>
+    </div>
+</section>
