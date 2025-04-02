@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
   list_txt:any
+  list_item:any;
   constructor(private eburger: EburgerService){
 
   }
@@ -20,6 +21,20 @@ export class HomeComponent {
       console.log("todos os textos", data);
       this.list_txt = data;
     });
+
+    this.itemsMenu();
+
+  }
+
+  itemsMenu(){
+    this.eburger.getItemMenu().subscribe((data:any)=>{
+      console.log("itens do menu", data);
+      this.list_item = data;
+
+    })
+  }
+  selectItem(e:any){
+    console.log("item selecionado", e);
 
   }
 

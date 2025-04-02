@@ -18,4 +18,7 @@ export class EburgerService {
   getEburgers() {
     return this.api.get('api/eburger/eburger_txt', false, httpOptions);
   }
+  getItemMenu() {
+    return this.api.get('api/eburger/itens_mn', false, httpOptions);
+  }
 }

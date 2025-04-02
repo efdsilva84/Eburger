@@ -43,12 +43,13 @@
                 <input type="search" placeholder="digite o nome do Burger">
             </div>
             <div class="rightside">
-                <select name="" id="">
-                    <option value="">Selecione uma categoria</option>
-                    <option value="burger">Burger</option>
+                <select >
+
+                    <option *ngFor="let menu of list_item" value="{{ menu.id_item }}">{{ menu.item_name }}</option>
+                    <!-- <option value="burger">Burger</option>
                     <option value="pizza">Pizza</option>
                     <option value="vegetariano">Vegetariano</option>
-                    <option value="kids">Kids</option>
+                    <option value="kids">Kids</option> -->
 
 
                 </select>
