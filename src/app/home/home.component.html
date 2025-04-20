@@ -43,7 +43,7 @@
                 <input type="search" placeholder="digite o nome do Burger">
             </div>
             <div class="rightside">
-                <select >
+                <select (change)="selectBurger($event)">
 
                     <option *ngFor="let menu of list_item" value="{{ menu.id_item }}">{{ menu.item_name }}</option>
                     <!-- <option value="burger">Burger</option>
@@ -59,82 +59,16 @@
 </section>
 <main>
     <div class="container">
-        <div class="products-grid">
-            <a href="" class="products-item">
+        <div class="products-grid" >
+            <a href="" class="products-item" *ngFor="let item of list_burger_select">
                 <div class="warning">Promoção</div>
                 <div class="photo">
                     <img src="assets/burgers/burger1.png" alt="">
                 </div>
                 <div class="info">
                     <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
-                </div>
-            </a>
-
-            <a href="" class="products-item">
-                <div class="photo">
-                    <img src="assets/burgers/burger1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
-                </div>
-            </a>
-
-            <a href="" class="products-item">
-                <div class="photo">
-                    <img src="assets/burgers/burger1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
-                </div>
-            </a>
-
-            <a href="" class="products-item">
-                <div class="photo">
-                    <img src="assets/burgers/burger1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
-                </div>
-            </a>
-
-            <a href="" class="products-item">
-                <div class="photo">
-                    <img src="assets/burgers/burger1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
-                </div>
-            </a>
-
-            <a href="" class="products-item">
-                <div class="photo">
-                    <img src="assets/burgers/burger1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
-                </div>
-            </a>
-
-            <a href="" class="products-item">
-                <div class="photo">
-                    <img src="assets/burgers/burger1.png" alt="">
-                </div>
-                <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">Texas Burger</div>
-                    <div class="product-price">25,50</div>
+                    <div class="product-name">{{ item.burger }}</div>
+                    <div class="product-price">{{ item.preco | centavosParaReais }}</div>
                 </div>
             </a>
 

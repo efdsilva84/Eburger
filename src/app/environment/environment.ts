@@ -4,7 +4,10 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'http://car.dev.br/ci3-api'
+    // apiUrl: 'http://car.dev.br/ci3-api'
+        apiUrl: ' http://localhost:8080'
+
+   
   };
   
   /*

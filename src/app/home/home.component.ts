@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { EburgerService } from '../services/eburger.service';
 import { CommonModule } from '@angular/common';
+import { CentavosParaReaisPipe } from "../pipes/centavos-para-reais.pipe";
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CentavosParaReaisPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   list_txt:any
   list_item:any;
+  list_burger_select:any;
   constructor(private eburger: EburgerService){
 
   }
@@ -36,6 +39,21 @@ export class HomeComponent {
   selectItem(e:any){
     console.log("item selecionado", e);
 
+  }
+
+  selectBurger(e: Event){
+    const inputValue = (e.target as HTMLInputElement).value;
+    console.log(inputValue);
+    this.eburger.searchBurger(inputValue).subscribe((data:any)=>{
+      console.log(data);
+      this.list_burger_select = data;
+      this.eburger.getEburgers().subscribe((data:any)=>{
+        console.log("todos os textos", data);
+        this.list_txt = data;
+      });
+      
+
+    })
   }
 
 
