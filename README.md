@@ -1,27 +1,31 @@
-# Burguer
+![logo_do_projeto](https://car.dev.br/ci3-api/application/imagens/giburger.jpg)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+# E*Burguer
 
-## Development server
+## Introdução
+Landing Page de uma hamburgueria, totalmente dinâmica, consumindo api, banco de dados mysql, requisições http, cadastro de novos hamburgueres, sistema de login, fazer pedidos, ver pedidos.
+## Pré-Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+NodeJS - v20.17.0
+Angular - 18.2.19
+```
 
-## Code scaffolding
+## Guida de Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ```
+https://github.com/efdsilva84/Eburger.git
+npm install
+ng serve
+  ```
+## Tecnologias Usadas
+* [Angular](https://v18.angular.dev/)
+* [NodeJs](https://nodejs.org/pt)
+* [TypeScript](https://www.typescriptlang.org)
+* [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+* [MySql](https://www.mysql.com/)
+* [PHP Codeigniter](https://codeigniter.com/userguide3/index.html)
 
-## Build
+## Autores / desenvolvedores
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* **Ed Carlos** - desenvolvedor full stack [Linkedin](https://www.linkedin.com/in/ed-furtado?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)*
