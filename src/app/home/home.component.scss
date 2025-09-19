@@ -101,7 +101,12 @@ header .menu{
     }
  
 }
-
+.btn-cart{
+    background-color: #fe6a0f; color: #fff; border: none;
+}
+.btn-cart:hover{
+    background-color: #ff6201; color: #fff; border: none;
+}
 
 // .menu--icon{
 //     width: 32px;

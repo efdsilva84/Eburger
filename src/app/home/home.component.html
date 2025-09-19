@@ -7,12 +7,57 @@
             <li><a href="">Início</a></li>
             <li><a href="">Burgers</a></li>
             <li><a href="">Contato</a></li>
+            <li data-bs-toggle="modal" data-bs-target="#exampleModal"><a href="#">Login</a></li>
+            <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg></a>&nbsp;<span class="badge bg-dark">{{item_cart}}</span></li>
+
+
+
 
         </ul>
         <div class="rightside">
-            <a href="" class="button">Fazer pedido</a>
+            <a href="">Fazer<i class="bi bi-cart"></i> pedido</a>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Login</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                   <form action="" [formGroup]="sendLogin" (ngSubmit)="logar()">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="emal"
+                                        placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="formGroupExampleInput2"
+                                        placeholder="Senha" , formControlName="senha">
+                                </div>
+
+</form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </nav>
+
     <div class="menu">
         <div class="menu--icon">
             <div></div>
@@ -21,13 +66,14 @@
 
         </div>
     </div>
+
 </header>
 
 <section class="hero">
     <div class="container" *ngFor="let item of list_txt">
         <div class="leftside">
-            <h1>{{ item.title_1 }}</h1>
-            <p>{{ item.txt_1 }}</p>
+            <h1>{{ item.title }}</h1>
+            <p>{{ item.txt }}</p>
             <a href="" class="button">Fazer pedido</a>
         </div>
         <div class="rightside">
@@ -45,7 +91,7 @@
             <div class="rightside">
                 <select (change)="selectBurger($event)">
 
-                    <option *ngFor="let menu of list_item" value="{{ menu.id_item }}">{{ menu.item_name }}</option>
+                    <option *ngFor="let menu of list_item" value="{{ menu.id_burger_type }}">{{ menu.burger }}</option>
                     <!-- <option value="burger">Burger</option>
                     <option value="pizza">Pizza</option>
                     <option value="vegetariano">Vegetariano</option>
@@ -59,16 +105,24 @@
 </section>
 <main>
     <div class="container">
-        <div class="products-grid" >
-            <a href="" class="products-item" *ngFor="let item of list_burger_select">
-                <div class="warning">Promoção</div>
+        <div class="products-grid">
+            <a  class="products-item" *ngFor="let item of list_burger_select">
+                <div *ngIf="item.promocao == 1" class="warning">Promoção</div>
                 <div class="photo">
                     <img src="assets/burgers/burger1.png" alt="">
                 </div>
                 <div class="info">
-                    <div class="product-category">Tradicional</div>
-                    <div class="product-name">{{ item.burger }}</div>
+                    <!-- <div class="product-category">Tradicional</div> -->
+                    <div class="product-name">{{ item.item_eburger }}</div>
                     <div class="product-price">{{ item.preco | centavosParaReais }}</div>
+                    <div (click)="addCart(item)" class="product-price"><button   class="btn btn-light btn-cart">+ 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                    </button>
+</div>
+
                 </div>
             </a>
 
@@ -85,6 +139,6 @@
         <div class="copy">Criado por
             <a href="">Ed Carlos</a>.
         </div>
-        
+
     </div>
 </footer>

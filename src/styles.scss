@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import 'ngx-toastr/toastr';
 .calistoga-regular {
     font-family: "Calistoga", serif;
     font-weight: 400;
@@ -34,3 +34,5 @@
     max-width: 1200px;
     padding: 0 20px;
   }
+
+

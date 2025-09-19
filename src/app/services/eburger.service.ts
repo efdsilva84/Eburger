@@ -24,6 +24,12 @@ export class EburgerService {
   searchBurger(id:any) {
     return this.api.get(`api/eburger/search_burger/${id}`, false, httpOptions);
   }
+    add_cart_burger(data:any) {
+    return this.api.post('api/eburger/add_item_cart', data, httpOptions);
+  }
+    getItemCartAll() {
+    return this.api.get('api/eburger/get_cart_item', false, httpOptions);
+  }
 
   
 }
