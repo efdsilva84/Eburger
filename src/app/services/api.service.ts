@@ -7,6 +7,9 @@ import { environment } from '../environment/environment';
 })
 export class ApiService {
   url = environment.apiUrl;
+  url_sistema: string = 'http://localhost:8080'
+
+
 
   constructor(private http: HttpClient) { }
 
